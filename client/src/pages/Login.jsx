@@ -122,7 +122,7 @@ const Login = () => {
       const currentTime = Date.now() / 1000; // Convert to seconds
       return payload.exp < currentTime;
     } catch (error) {
-      // If decoding fails, consider token invalid
+      // If decoding fails, consider token is invalid
       return true;
     }
   };
