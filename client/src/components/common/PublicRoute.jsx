@@ -1,18 +1,27 @@
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const ProtectedRoute = ({ children }) => {
+const PublicRoute = ({ children }) => {
   const { user, loading } = useAuth();
-  const location = useLocation();
 
   if (loading) {
     return <div style={loadingStyle}>Loading...</div>;
   }
 
-  if (!user) {
-    // Save the location user was trying to access
-    return <Navigate to="/login" state={{ from: location }} replace />;
+  // If already logged in, redirect to the dashboard
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
   }
 
+  // If not logged in, show the public page
   return children;
 };
+
+const loadingStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "80vh",
+};
+
+export default PublicRoute;
