@@ -1,9 +1,32 @@
 import express from "express";
-import { loginUser } from "../controllers/authController.js";
 
 const router = express.Router();
 
-// Login route
-router.post("/login", loginUser);
+// REGISTER
+router.post("/register", (req, res) => {
+  const { name, email, password } = req.body;
+
+  res.status(201).json({
+    token: "dummy_jwt_token",
+    user: {
+      id: "123",
+      name,
+      email,
+    },
+  });
+});
+
+// LOGIN
+router.post("/login", (req, res) => {
+  const { email } = req.body;
+
+  res.json({
+    token: "dummy_jwt_token",
+    user: {
+      id: "123",
+      email,
+    },
+  });
+});
 
 export default router;
