@@ -1,0 +1,15 @@
+# Production Environment Variables
+
+## Server
+
+DATABASE_URL=
+JWT_SECRET=
+NODE_ENV=production
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+FRONTEND_URL=
+
+## Client
+
+VITE_API_BASE_URL=
