@@ -9,6 +9,10 @@
     "install-all": "npm install && npm install --prefix client && npm install --prefix server"
   },
   "devDependencies": {
+    "@testing-library/user-event": "^14.6.1",
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.13.1"
   }
 }

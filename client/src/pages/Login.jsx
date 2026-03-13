@@ -90,6 +90,7 @@ const Login = () => {
         // Login successful
 
         const { login } = useAuth();
+        
 
         // 3. Clear form
         setFormData({ email: "", password: "" });

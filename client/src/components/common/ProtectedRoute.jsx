@@ -15,9 +15,11 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!user) {
-    // Save the location user was trying to access
+    // Save the location that user was trying to access
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return children;
 };
+
+export default ProtectedRoute;
